@@ -3,187 +3,106 @@
 //project 3
 
 //variables and objects
-var i = 0 //the counter variable for function use
-var exerciser = "Jaesyn";
-var pyramidChallenge = [" walking ", " kickboxing ", " Tai Chi ", " DDP Yoga ", " jogging ", " TTapp ", " pilates "];
-var workoutDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-var durationWorkout = [5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5];
-var workoutChoices = pyramidChallenge.length; 
-var freeTime = 60; 
-var workoutTime = 25; 
-var gonnaWorkout = true; 
-var gonnaSkip = false; 
-var quoteLife10 = "Life is 10% what happens to you and 90% how handle it.";
-var quoteNever = "\"Never give in and never give up.\" ~ Hubert H. Humphrey";
-var someday = "Someday is not a day of the week"; 
-var workoutMinutes=(freeTime<60)?"Do the quick workout!":"You got time to get the full burn!";
+var time2Walk = 75; 
 
-var workoutWarmUp = {
-	workout: "Pyramid Walk",
-	minutes: 5, 
-	aerobic: true, 
-	speed: "slow to medium speed", 
-	location: ["outside", "inside"],
-	timer: minute5Timer(5)	
+var owner = {
+	name: "Jenney",
+	age: 36, 
+	hairColor: "brown", 
+	walking: true,  
+	location: ["in town", "the country"], 
+	timePerDog: function(time2Walk){
+		var perDog = time2Walk/5
+		if (perDog > 10) {
+			console.log("Walk the dogs each for " + perDog + " minutes.");
+		} else {
+			console.log("Play fetch with them in the backyard.");
+			return ("don't forget the leash"); 
+		}
+		}
 };
 
-var workoutCoolDown = {
-	workout: "Pyramid Walk",
-	minutes: 5, 
-	aerobic: true, 
-	speed: "slow to medium speed", 
-	location: ["outside", "inside"],
-	timer: minute5Timer(5)
-};
-
-var workoutLevelOne = {
-	workout: ["walking", "jogging"], 
-	minutes: 1, 
-	aerobic: true, 
-	speed: "Level One: Medium to Brisk Walk/Jog", 
-	location: ["outside", "inside"],
-	timer: minuteTimer() 
-};
-
-var workoutLevelTwo = {
-	workout: ["walking", "jogging"], 
-	minutes: 1, 
-	aerobic: true, 
-	speed: "Level Two: Brisk Walk/Jog", 
-	location: ["outside", "inside"],
-	timer: minuteTimer()
-};
-
-var workoutLevelThree = {
-	workout: ["walking", "jogging"], 
-	minutes: 1, 
-	aerobic: true, 
-	speed: "Level Three: Increase Speed or Incline", 
-	location: ["outside", "inside"],
-	timer: minuteTimer()
-};
-
-var workoutLevelFour = {
-	workout: ["walking", "jogging"], 
-	minutes: 1, 
-	aerobic: true, 
-	speed: "Level Four: Increase Speed or Incline", 
-	location: ["outside", "inside"],
-	timer: minuteTimer()
-};
-
-var workoutLevelFive = {
-	workout: ["walking", "jogging"], 
-	minutes: 1, 
-	aerobic: true, 
-	speed: "Level Five: Increase Speed or Incline", 
-	location: ["outside", "inside"],
-	timer: minuteTimer()
-};
-
-var liftingLevelOne = {
-	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
-	weight: 8, 
-	aerobic: false, 
-	repetitions: 12, 
-};
-
-var liftingLevelTwo = {
-	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
-	weight: 10, 
-	aerobic: false, 
-	repetitions: 10,
-};
-
-var liftingLevelThree = {
-	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
-	weight: 12, 
-	aerobic: false, 
-	repetitions: 8,
-};
-
-var liftingLevelFour = {
-	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
-	weight: 15, 
-	aerobic: false, 
-	repetitions: 6,
-};
-
-var liftingLevelFive = {
-	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
-	weight: 18, 
-	aerobic: false, 
-	repetitions: 3,
-};
-
-var aerobicsWorkout = {
-	pyramidChallenge: ["walking", "jogging"],
-	day: workoutDay[0],
-	minutes: 25,
-	aerobic: true, 
-	routine: function(){
-		var myRoutine = workoutWarmUp; 
-		console.log("Let's workout! " + myRoutine);
+var dogOne = {
+	name: "Sasha", 
+	age: 7, 
+	hairColor: "grey/brown", 
+	walking: false, 
+	likesTo: function() {
+		if (this.walking == true) {
+			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+		} else {
+			console.log("Grrr." + this.name + " says, I want to sleep.");
+		}
 	}
-	
-}; 
+};
+
+var dogTwo = {
+	name: "Penelope", 
+	age: 2, 
+	hairColor: "orange/brown", 
+	walking: true, 
+	likesTo: function() {
+		if (this.walking == true) {
+			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+		} else {
+			console.log("Grrr." + this.name + " says, I want to sleep.");
+		}
+	}
+};
+
+var dogThree = {
+	name: "Finnegan", 
+	age: 2, 
+	hairColor: "black", 
+	walking: true, 
+	likesTo: function() {
+		if (this.walking == true) {
+			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+		} else {
+			console.log("Grrr." + this.name + " says, I want to sleep.");
+		}
+	}
+};
+
+var dogFour = {
+	name: "Zayde", 
+	age: 1, 
+	hairColor: "white with spots", 
+	walking: false, 
+	likesTo: function() {
+		if (this.walking == true) {
+			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+		} else {
+			console.log("Grrr." + this.name + " says, I want to sleep.");
+		}
+	}
+};
+
+var dogFive = {
+	name: "Dixie", 
+	age: 1, 
+	hairColor: "orange/brown with a white collar", 
+	walking: false, 
+	likesTo: function() {
+		if (this.walking == true) {
+			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+		} else {
+			console.log("Grrr." + this.name + " says, I want to sleep.");
+		}
+	}
+};
+
 
 //procedure
-console.log("Welcome " + exerciser + " to your workout! Which will you chose today? " + pyramidChallenge);
-
-//boolean function
-function numberOfWorkouts (freeTime, workoutTime) {
-	if (freeTime > workoutTime) {
-	numberOfWorkouts = freeTime/workoutTime
-	i = Math.round(numberOfWorkouts);
-	console.log("You have time for " + i + " workout(s) today!"); 
-	console.log("Your workouts are: " + pyramidChallenge[i-i] + " and " + pyramidChallenge[i-i+1]);
-	} else {
-	console.log("You have time for a quick walk around the neighborhood."); 	
-	} 
-	return "Tomorrow is a new day for a new Pyramid Challenge!"
-}
-
-//math function
-function minuteTimer(){
-	var count=60;
-	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second 
-
-	// 60 second timer
-	function timer(){
-  		count=count-1;
-  		if (count <= 0){
-     	clearInterval(counter);
-     	return;
-  		}
-	document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
-	}
-}; 
-
-function minute5Timer(interval){
-	var count=60*interval;
-	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second 
-
-	// 60 second timer
-	function timer(){
-  		count=count-1;
-  		if (count <= 0){
-     	clearInterval(counter);
-     	return;
-  		}
-	document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
-	}
-}; 
-
-//outputs
-console.log("Today is " + workoutDay[0] + ", and your workout is: " + pyramidChallenge[0] + "!");
-
-//console.log(numberOfWorkouts(20, 25));
-
-//for (var key in liftingLevelFive) {};
-
-//running the aerobicsWorkout
-//console.log("Today is " + workoutDay[0] + "! So let's workout! " + aerobicsWorkout.routine()); 
-console.log("Let's start our " + workoutWarmUp.workout + " with a " + workoutWarmUp.speed + ". We'll start in 60 seconds. Get Ready!")	
-
-//need a way to run something after the timer runs out...
+console.log("Welcome " + owner.name + " " + owner.walking + "ly you'd like to walk the dogs today, right?");
+console.log(owner.timePerDog(60)); 
+console.log(dogOne.likesTo());
+console.log("Okay, " + dogOne.name + ", I will come back for you.");
+console.log(dogTwo.likesTo()); 
+console.log("Okay, " + dogTwo.name + ", Let's go!");
+console.log(dogThree.likesTo()); 
+console.log("Okay, " + dogThree.name + ", It's your turn!");
+console.log(dogFour.likesTo());
+console.log("Okay, " + dogFour.name + ", I will carry you while I walk the others.");
+console.log(dogFive.likesTo());
+console.log("Okay, " + dogFive.name + ", Geesh! You and " + dogOne.name + " are going on a walk together. Let's go!");
