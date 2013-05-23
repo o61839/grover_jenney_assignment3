@@ -39,11 +39,21 @@ var workoutMinutes=(freeTime<60)?"Do the quick workout!":"You got time to get th
 console.log("Welcome " + exerciser + " to your workout! Which will you chose today? " + pyramidChallenge);
 
 //boolean conditional 
-if (freeTime>workoutTime) {
-	console.log("You have time to workout! Your workout is: " + pyramidChallenge[i]);
-	i++
-	//freeTime = freeTime - workoutTime; 
+
+//number function
+function numberOfWorkouts (freeTime, workoutTime) {
+	if (freeTime > workoutTime) {
+	numberOfWorkouts = freeTime/workoutTime
+	i = Math.round(numberOfWorkouts);
+	console.log("You have time for " + i + " workout(s) today!"); 
+	console.log("Your workouts are: " + pyramidChallenge[i-i] + " and " + pyramidChallenge[i-i+1]);
 	} else {
 	console.log("You have time for a quick walk around the neighborhood."); 	
+	} 
+
 }
+
+console.log("Today is " + workoutDay[0] + ", and your workout is: ");
+console.log(numberOfWorkouts(20, 25));
+
 	
