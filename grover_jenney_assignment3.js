@@ -35,12 +35,108 @@ var quoteNever = "\"Never give in and never give up.\" ~ Hubert H. Humphrey";
 var someday = "Someday is not a day of the week"; 
 var workoutMinutes=(freeTime<60)?"Do the quick workout!":"You got time to get the full burn!";
 
+var workoutWarmUp = {
+	workout: "Pyramid Walk",
+	minutes: 5, 
+	aerobic: true, 
+	speed: "Slow to Medium Walk", 
+	location: ["outside", "inside"],
+};
+
+var workoutCoolDown = {
+	workout: "Pyramid Walk",
+	minutes: 5, 
+	aerobic: true, 
+	speed: "Slow to Medium Walk", 
+	location: ["outside", "inside"],
+};
+
+var workoutLevelOne = {
+	workout: ["walking", "jogging"], 
+	minutes: 1, 
+	aerobic: true, 
+	speed: "Level One: Medium to Brisk Walk/Jog", 
+	location: ["outside", "inside"],
+};
+
+var workoutLevelTwo = {
+	workout: ["walking", "jogging"], 
+	minutes: 1, 
+	aerobic: true, 
+	speed: "Level Two: Brisk Walk/Jog", 
+	location: ["outside", "inside"],
+};
+
+var workoutLevelThree = {
+	workout: ["walking", "jogging"], 
+	minutes: 1, 
+	aerobic: true, 
+	speed: "Level Three: Increase Speed or Incline", 
+	location: ["outside", "inside"],
+};
+
+var workoutLevelFour = {
+	workout: ["walking", "jogging"], 
+	minutes: 1, 
+	aerobic: true, 
+	speed: "Level Four: Increase Speed or Incline", 
+	location: ["outside", "inside"],
+};
+
+var workoutLevelFive = {
+	workout: ["walking", "jogging"], 
+	minutes: 1, 
+	aerobic: true, 
+	speed: "Level Five: Increase Speed or Incline", 
+	location: ["outside", "inside"],
+};
+
+var liftingLevelOne = {
+	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
+	weight: 8, 
+	aerobic: false, 
+	repetitions: 12, 
+};
+
+var liftingLevelOne = {
+	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
+	weight: 8, 
+	aerobic: false, 
+	repetitions: 12, 
+};
+
+var liftingLevelTwo = {
+	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
+	weight: 10, 
+	aerobic: false, 
+	repetitions: 10,
+};
+
+var liftingLevelThree = {
+	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
+	weight: 12, 
+	aerobic: false, 
+	repetitions: 8,
+};
+
+var liftingLevelFour = {
+	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
+	weight: 15, 
+	aerobic: false, 
+	repetitions: 6,
+};
+
+var liftingLevelFive = {
+	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
+	weight: 18, 
+	aerobic: false, 
+	repetitions: 3,
+};
+
 //procedure
 console.log("Welcome " + exerciser + " to your workout! Which will you chose today? " + pyramidChallenge);
 
-//boolean conditional 
-
-//number function
+//boolean function
 function numberOfWorkouts (freeTime, workoutTime) {
 	if (freeTime > workoutTime) {
 	numberOfWorkouts = freeTime/workoutTime
@@ -50,7 +146,7 @@ function numberOfWorkouts (freeTime, workoutTime) {
 	} else {
 	console.log("You have time for a quick walk around the neighborhood."); 	
 	} 
-
+	return "Tomorrow is a new day for a new Pyramid Challenge!"
 }
 
 console.log("Today is " + workoutDay[0] + ", and your workout is: ");
