@@ -2,24 +2,7 @@
 //SDI 1305
 //project 3
 
-var count=60;
-
-var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
-
-// 60 second timer
-function timer()
-{
-  count=count-1;
-  if (count <= 0)
-  {
-     clearInterval(counter);
-     return;
-  }
-
- document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
-}
-
-
+//variables and objects
 var i = 0 //the counter variable for function use
 var exerciser = "Jaesyn";
 var pyramidChallenge = [" walking ", " kickboxing ", " Tai Chi ", " DDP Yoga ", " jogging ", " TTapp ", " pilates "];
@@ -57,6 +40,7 @@ var workoutLevelOne = {
 	aerobic: true, 
 	speed: "Level One: Medium to Brisk Walk/Jog", 
 	location: ["outside", "inside"],
+	timer: minuteTimer() 
 };
 
 var workoutLevelTwo = {
@@ -98,13 +82,6 @@ var liftingLevelOne = {
 	repetitions: 12, 
 };
 
-var liftingLevelOne = {
-	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
-	weight: 8, 
-	aerobic: false, 
-	repetitions: 12, 
-};
-
 var liftingLevelTwo = {
 	workout: ["biceps", "triceps", "chest", "upper back", "lower back", "abs", "thighs", "hammies", "calves"],
 	weight: 10, 
@@ -133,6 +110,18 @@ var liftingLevelFive = {
 	repetitions: 3,
 };
 
+var aerobicsWorkout = {
+	pyramidChallenge: ["walking", "jogging"],
+	day: workoutDay[0],
+	minutes: 25,
+	aerobic: true, 
+	routine: function(){
+		var myRoutine = workoutWarmUp; 
+		console.log("Let's workout! " + myRoutine);
+	}
+	
+}; 
+
 //procedure
 console.log("Welcome " + exerciser + " to your workout! Which will you chose today? " + pyramidChallenge);
 
@@ -149,7 +138,29 @@ function numberOfWorkouts (freeTime, workoutTime) {
 	return "Tomorrow is a new day for a new Pyramid Challenge!"
 }
 
-console.log("Today is " + workoutDay[0] + ", and your workout is: ");
-console.log(numberOfWorkouts(20, 25));
+//math function
+function minuteTimer(){
+	var count=60;
+	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 
-	
+	// 60 second timer
+	function timer(){
+  		count=count-1;
+  		if (count <= 0){
+     	clearInterval(counter);
+     	return;
+  		}
+	document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+	}
+}; 
+
+//outputs
+console.log("Today is " + workoutDay[0] + ", and your workout is: " + pyramidChallenge[0] + "!");
+
+//console.log(numberOfWorkouts(20, 25));
+
+//for (var key in liftingLevelFive) {};
+
+//running the aerobicsWorkout
+//console.log("Today is " + workoutDay[0] + "! So let's workout! " + aerobicsWorkout.routine()); 
+console.log(workoutLevelOne); 	
