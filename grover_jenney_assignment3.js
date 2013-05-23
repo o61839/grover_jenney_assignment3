@@ -22,16 +22,18 @@ var workoutWarmUp = {
 	workout: "Pyramid Walk",
 	minutes: 5, 
 	aerobic: true, 
-	speed: "Slow to Medium Walk", 
+	speed: "slow to medium speed", 
 	location: ["outside", "inside"],
+	timer: minute5Timer(5)	
 };
 
 var workoutCoolDown = {
 	workout: "Pyramid Walk",
 	minutes: 5, 
 	aerobic: true, 
-	speed: "Slow to Medium Walk", 
+	speed: "slow to medium speed", 
 	location: ["outside", "inside"],
+	timer: minute5Timer(5)
 };
 
 var workoutLevelOne = {
@@ -49,6 +51,7 @@ var workoutLevelTwo = {
 	aerobic: true, 
 	speed: "Level Two: Brisk Walk/Jog", 
 	location: ["outside", "inside"],
+	timer: minuteTimer()
 };
 
 var workoutLevelThree = {
@@ -57,6 +60,7 @@ var workoutLevelThree = {
 	aerobic: true, 
 	speed: "Level Three: Increase Speed or Incline", 
 	location: ["outside", "inside"],
+	timer: minuteTimer()
 };
 
 var workoutLevelFour = {
@@ -65,6 +69,7 @@ var workoutLevelFour = {
 	aerobic: true, 
 	speed: "Level Four: Increase Speed or Incline", 
 	location: ["outside", "inside"],
+	timer: minuteTimer()
 };
 
 var workoutLevelFive = {
@@ -73,6 +78,7 @@ var workoutLevelFive = {
 	aerobic: true, 
 	speed: "Level Five: Increase Speed or Incline", 
 	location: ["outside", "inside"],
+	timer: minuteTimer()
 };
 
 var liftingLevelOne = {
@@ -141,7 +147,22 @@ function numberOfWorkouts (freeTime, workoutTime) {
 //math function
 function minuteTimer(){
 	var count=60;
-	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second 
+
+	// 60 second timer
+	function timer(){
+  		count=count-1;
+  		if (count <= 0){
+     	clearInterval(counter);
+     	return;
+  		}
+	document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+	}
+}; 
+
+function minute5Timer(interval){
+	var count=60*interval;
+	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second 
 
 	// 60 second timer
 	function timer(){
@@ -163,4 +184,6 @@ console.log("Today is " + workoutDay[0] + ", and your workout is: " + pyramidCha
 
 //running the aerobicsWorkout
 //console.log("Today is " + workoutDay[0] + "! So let's workout! " + aerobicsWorkout.routine()); 
-console.log(workoutLevelOne); 	
+console.log("Let's start our " + workoutWarmUp.workout + " with a " + workoutWarmUp.speed + ". We'll start in 60 seconds. Get Ready!")	
+
+//need a way to run something after the timer runs out...
