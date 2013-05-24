@@ -3,6 +3,11 @@
 //project 3
 
 var time2Walk = 75;
+var a = "Left, Left, I left my wife ";
+var b = "and 42 children ";
+var c = "in starving condition ";
+var d = "did I do right? ";
+var songLeftRight = [a, b, c, d]; 
 
 //JSON 
 var walkRoute = {
@@ -127,8 +132,8 @@ var dogFive = {
 
 
 
-//function 
-
+//functions
+//while loop
 function waterTheDogs (water, waterGallons) {
     while (water < waterGallons) {
         console.log("The dogs are thirsty after their walks. They need " + water + " cups of water.")
@@ -138,6 +143,14 @@ function waterTheDogs (water, waterGallons) {
 	return waterGallons;
 }
 
+//array function 
+function singSong (i, songLeftRight) {
+	for (i; i<songLeftRight.length; i++) {
+	console.log(songLeftRight[i]);
+	} 
+	console.log("We sang this many lines to the song. BUT we will NOT repeat it!");
+	return songLeftRight; 
+}
 
 //main code
 console.log("The total walking area for each dog's route is " + walkRoute.lengthOfWalk());
@@ -151,8 +164,10 @@ console.log(dogThree.likesTo());
 console.log("Okay, " + dogThree.name + ", It's your turn!");
 console.log(dogFour.likesTo());
 console.log("Okay, " + dogFour.name + ", I will carry you while I walk the others.");
-console.log("Okay, we are going on a longer walk since you are pansies and we have time! We are adding " + walkRoute.setWestRoute(8) + " blocks!")
+console.log("Sometimes walking gets boring. Let's sing a cadence!"); 
+console.log(singSong(0, songLeftRight)); console.log("Okay, we are going on a longer walk since you are pansies and we have time! We are adding " + walkRoute.setWestRoute(8) + " blocks!")
 console.log(dogFive.likesTo());
 console.log("Okay, " + dogFive.name + ", Geesh! You and " + dogOne.name + " are going on a walk together. Let's go!");
 console.log("After the walk, we need to water the dogs.");
 console.log(waterTheDogs(5, 10)); 
+
