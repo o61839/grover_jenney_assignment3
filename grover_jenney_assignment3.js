@@ -17,9 +17,13 @@ var walkRoute = {
 		console.log("Your walk is " + perimeter + " blocks for each dog.");
 		return walkRoute; 
 	}, 
-	
-	
-}
+	"setWestRoute": function(newWestRoute){
+		this.westRoute = newWestRoute; //mutator
+		var perimeter = this.southRoute + this.westRoute + this.northRoute + this.eastRoute;
+		console.log("Your walk is " + perimeter + " blocks for this group.");
+		return newWestRoute; 
+	}
+};
 
 //variables and objects
  
@@ -46,12 +50,12 @@ var dogOne = {
 	age: 7, 
 	hairColor: "grey/brown", 
 	walking: false, 
-	likesTo: function() {
-		if (this.walking == true) {
-			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
-			return this.walking + "ly I want to go!"; 
-		} else {
+	likesTo: function(sleeping) {
+		if (sleeping == true) {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
+			return sleeping + "ly I want to go to sleep!"; 
+		} else {
+			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
 			return this.walking; 
 		}
 	}
@@ -130,7 +134,7 @@ var dogFive = {
 console.log("The total walking area for each dog's route is " + walkRoute.lengthOfWalk());
 console.log("Welcome " + owner.name + " " + owner.walking + "ly you'd like to walk the dogs today, right?");
 console.log(owner.timePerDog(60)); 
-console.log(dogOne.likesTo());
+console.log(dogOne.likesTo(true));
 console.log("Okay, " + dogOne.name + ", I will come back for you.");
 console.log(dogTwo.likesTo()); 
 console.log("Okay, " + dogTwo.name + ", Let's go!");
@@ -138,5 +142,7 @@ console.log(dogThree.likesTo());
 console.log("Okay, " + dogThree.name + ", It's your turn!");
 console.log(dogFour.likesTo());
 console.log("Okay, " + dogFour.name + ", I will carry you while I walk the others.");
+console.log("Okay, we are going on a longer walk since you are pansies and we have time! We are adding " + walkRoute.setWestRoute(8) + " blocks!")
 console.log(dogFive.likesTo());
 console.log("Okay, " + dogFive.name + ", Geesh! You and " + dogOne.name + " are going on a walk together. Let's go!");
+
