@@ -15,9 +15,10 @@ var owner = {
 		var perDog = time2Walk/5
 		if (perDog > 10) {
 			console.log("Walk the dogs each for " + perDog + " minutes.");
+			return perDog;
 		} else {
 			console.log("Play fetch with them in the backyard.");
-			return ("don't forget the leash"); 
+			return perDog;  
 		}
 		}
 };
@@ -30,8 +31,10 @@ var dogOne = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+			return this.walking; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
+			return this.walking; 
 		}
 	}
 };
@@ -44,8 +47,10 @@ var dogTwo = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+			return this.walking; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
+			return this.walking; 
 		}
 	}
 };
@@ -58,8 +63,10 @@ var dogThree = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+			return this.walking; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
+			return this.walking; 
 		}
 	}
 };
@@ -72,10 +79,12 @@ var dogFour = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+			return this.walking; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
+			return this.walking;
 		}
-	}
+	} 
 };
 
 var dogFive = {
@@ -86,8 +95,10 @@ var dogFive = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
+			return this.walking; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
+			return this.walking; 
 		}
 	}
 };
