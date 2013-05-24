@@ -2,9 +2,27 @@
 //SDI 1305
 //project 3
 
-//variables and objects
-var time2Walk = 75; 
+var time2Walk = 75;
 
+//JSON 
+var walkRoute = {
+	"name": "In Town", 
+	"southRoute": 4, 
+	"westRoute": 4, 
+	"northRoute": 4, 
+	"eastRoute": 4, 
+	"isSquare": true, 
+	"lengthOfWalk": function(){
+		var perimeter = this.southRoute + this.westRoute + this.northRoute + this.eastRoute;
+		console.log("Your walk is " + perimeter + " blocks for each dog.");
+		return walkRoute; 
+	}, 
+	
+	
+}
+
+//variables and objects
+ 
 var owner = {
 	name: "Jenney",
 	age: 36, 
@@ -31,7 +49,7 @@ var dogOne = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
-			return this.walking; 
+			return this.walking + "ly I want to go!"; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
 			return this.walking; 
@@ -47,7 +65,7 @@ var dogTwo = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
-			return this.walking; 
+			return this.walking + "ly I want to go!"; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
 			return this.walking; 
@@ -63,7 +81,7 @@ var dogThree = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
-			return this.walking; 
+			return this.walking + "ly I want to go!"; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
 			return this.walking; 
@@ -79,7 +97,7 @@ var dogFour = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
-			return this.walking; 
+			return this.walking + "ly I want to go!"; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
 			return this.walking;
@@ -95,7 +113,7 @@ var dogFive = {
 	likesTo: function() {
 		if (this.walking == true) {
 			console.log("Ruff. " + this.name + " says, Let's go for a walk!");
-			return this.walking; 
+			return this.walking + "ly I want to go!"; 
 		} else {
 			console.log("Grrr." + this.name + " says, I want to sleep.");
 			return this.walking; 
@@ -104,7 +122,12 @@ var dogFive = {
 };
 
 
-//procedure
+
+//function 
+
+
+//main code
+console.log("The total walking area for each dog's route is " + walkRoute.lengthOfWalk());
 console.log("Welcome " + owner.name + " " + owner.walking + "ly you'd like to walk the dogs today, right?");
 console.log(owner.timePerDog(60)); 
 console.log(dogOne.likesTo());
