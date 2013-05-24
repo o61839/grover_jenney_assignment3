@@ -129,6 +129,15 @@ var dogFive = {
 
 //function 
 
+function waterTheDogs (water, waterGallons) {
+    while (water < waterGallons) {
+        console.log("The dogs are thirsty after their walks. They need " + water + " cups of water.")
+        water+=1;
+    };
+    console.log("     We used this many gallons of water.");
+	return waterGallons;
+}
+
 
 //main code
 console.log("The total walking area for each dog's route is " + walkRoute.lengthOfWalk());
@@ -145,4 +154,5 @@ console.log("Okay, " + dogFour.name + ", I will carry you while I walk the other
 console.log("Okay, we are going on a longer walk since you are pansies and we have time! We are adding " + walkRoute.setWestRoute(8) + " blocks!")
 console.log(dogFive.likesTo());
 console.log("Okay, " + dogFive.name + ", Geesh! You and " + dogOne.name + " are going on a walk together. Let's go!");
-
+console.log("After the walk, we need to water the dogs.");
+console.log(waterTheDogs(5, 10)); 
