@@ -31,6 +31,25 @@ var walkRoute = {
 };
 
 //variables and objects
+
+var cat = {
+	name: "Silly Kitty", 
+	hairColor: "red/white", 
+	hissing: true, 
+	taunting: true, 
+	swat: true, 
+	tauntsDogs: function(catName) { 
+		if (catName === this.name) {
+			console.log(this.name + " leave my dogs alone."); 
+			} if (this.hissing === true, this.taunting === true, this.swat === true) { //nested conditional
+			console.log(this.name + " bad kitty!"); 
+			hissing = false
+			return hissing; 
+			} else {
+			console.log("Let's finish our walk");  
+			}
+		}
+};
  
 var owner = {
 	name: "Jenney",
@@ -152,6 +171,9 @@ function singSong (i, songLeftRight) {
 	return songLeftRight; 
 }
 
+//nested loops and conditionals
+
+
 //main code
 console.log("The total walking area for each dog's route is " + walkRoute.lengthOfWalk());
 console.log("Welcome " + owner.name + " " + owner.walking + "ly you'd like to walk the dogs today, right?");
@@ -160,6 +182,7 @@ console.log(dogOne.likesTo(true));
 console.log("Okay, " + dogOne.name + ", I will come back for you.");
 console.log(dogTwo.likesTo()); 
 console.log("Okay, " + dogTwo.name + ", Let's go!");
+console.log(cat.tauntsDogs()); 
 console.log(dogThree.likesTo()); 
 console.log("Okay, " + dogThree.name + ", It's your turn!");
 console.log(dogFour.likesTo());
